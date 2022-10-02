@@ -17,27 +17,26 @@
       <header class="row bg-primary py-3 mx-1 rounded">
         <div class="col-sm">
           <div class="dropdown text-start">
-            <button type="button" class="btn btn-primary dropdown-toggle text-start" data-bs-toggle="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggler text-start" data-bs-toggle="dropdown">
               |||
             </button>
             <ul class="dropdown-menu bg-dark">
-              <li><a class="dropdown-item text-white"x href="/index.html">Home</a></li>
-              <li><a class="dropdown-item text-white"x href="#">Link 2</a></li>
-              <li><a class="dropdown-item text-white"x href="#">Link 3</a></li>
+              <li><a class="dropdown-item text-white"x href="/">Home</a></li>
+              <li><a class="dropdown-item text-white"x href="/auth/login">Login</a></li>
+              <li><a class="dropdown-item text-white"x href="/auth/signup">Sign Up</a></li>
             </ul>
           </div> 
-          <h1 style="font-size: 400%">The Noter</h1>
+          <h1>The Noter</h1>
           <h3>Taking your notes in the simplest way</h3>
         </div>
       </header>
 
-      <!-- Who am I? -->
-
+      {% block content %}
       <section class=" m-1 p-2 border border-primary rounded">
         <div class="row bg-dark m-2 rounded">
         </div>
       </section>
-
+      {% endblock %}
       <!-- Footer -->
 
       <footer class="bg-primary mx-1 py-2 rounded text-dark">
