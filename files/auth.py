@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, flash
 
 auth = Blueprint("auth", __name__)
 
@@ -20,14 +20,18 @@ def sign_up():
         valid = True
         if len(email) < 4:
             valid = False
+            flash("Email must be at least 4 characters", category="error")
         if len(fullName) < 2:
             valid = False
+            flash("Name must be at least 2 characters", category="error")
         if password1 != password2:
             valid = False
+            flash("Passwords don't match", category="error")
         if len(password1) < 8:
             valid = False
+            flash("Password must be at least 8 characters", category="error")
         if valid:
             # add to db
-            pass
+            flash("Account created", category="success")
 
     return render_template("sign_up.html")
