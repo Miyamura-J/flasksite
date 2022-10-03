@@ -30,13 +30,12 @@
           <h3>Taking your notes in the simplest way</h3>
         </div>
       </header>
-
-      {% block content %}
+      
       <section class=" m-1 p-2 border border-primary rounded">
-        <div class="row bg-dark m-2 rounded">
-        </div>
+        {% block content %}
+        
+        {% endblock %}
       </section>
-      {% endblock %}
       <!-- Footer -->
 
       <footer class="bg-primary mx-1 py-2 rounded text-dark">
