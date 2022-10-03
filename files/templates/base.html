@@ -21,9 +21,9 @@
               |||
             </button>
             <ul class="dropdown-menu bg-dark">
-              <li><a class="dropdown-item text-white"x href="/">Home</a></li>
-              <li><a class="dropdown-item text-white"x href="/auth/login">Login</a></li>
-              <li><a class="dropdown-item text-white"x href="/auth/signup">Sign Up</a></li>
+              <li><a class="dropdown-item text-white"x href="{{ url_for('views.home') }}">Home</a></li>
+              <li><a class="dropdown-item text-white"x href="{{ url_for('auth.login') }}">Login</a></li>
+              <li><a class="dropdown-item text-white"x href="{{ url_for('auth.sign_up') }}">Sign Up</a></li>
             </ul>
           </div> 
           <h1>The Noter</h1>
