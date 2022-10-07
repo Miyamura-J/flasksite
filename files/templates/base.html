@@ -21,9 +21,13 @@
               |||
             </button>
             <ul class="dropdown-menu bg-dark">
+              {% if user.is_authenticated %}
               <li><a class="dropdown-item text-white"x href="{{ url_for('views.home') }}">Home</a></li>
+              <li><a class="dropdown-item text-white"x href="{{ url_for('auth.logout') }}">Logout</a></li>
+              {% else %}
               <li><a class="dropdown-item text-white"x href="{{ url_for('auth.login') }}">Login</a></li>
               <li><a class="dropdown-item text-white"x href="{{ url_for('auth.sign_up') }}">Sign Up</a></li>
+              {% endif %}
             </ul>
           </div> 
           <h1>The Noter</h1>
