@@ -16,6 +16,7 @@ def login():
         if user:
             if check_password_hash(user.password,password):
                 flash("Loged in succesfuly", category="success")
+                return redirect(url_for("views.home"))
             else:
                 flash("Wrong password", category="error")
         else:
@@ -37,6 +38,9 @@ def sign_up():
         if len(email) < 4:
             valid = False
             flash("Email must be at least 4 characters", category="error")
+        elif User.query.filter_by(email=email).first():
+            valid = False
+            flash("Email already exists", category="error")
         if len(name) < 2:
             valid = False
             flash("Name must be at least 2 characters", category="error")
